@@ -1,0 +1,52 @@
+<%- include("partials/header.ejs") %>
+
+      <%if (locals.post){%>
+        <div class="mx-5 row">
+          <div class="col-12">
+           <form action="/posts/<%= post.id %>/update" method="POST">
+
+            <div class="col-6">
+              <input type="text" id="editedTitle" name="title" value="<%= post.title %>" required />
+            </div>
+
+            <div class="col-lg-10 col-sm-12">
+              <textarea name="content" id="content" required><%= post.content %></textarea>
+            </div>
+        
+
+            <div class="submit mt-3">
+              <button id="upload" type="submit">Update Post</button>
+            </div>
+           </form>
+
+          </div>
+        </div>
+       
+
+       <% }else{ %> 
+        <div class="mx-5 row">
+
+          <div class="col-12">
+            <form action="/submit" method="POST">  
+
+            <div class="col-6">
+              <label class="label" for="title"></label><br>
+              <input  type="text" placeholder="Title" id="title" name="title" value="" required><br> 
+            </div>      
+             
+            <div class="col-lg-10 col-sm-12">
+              <textarea id="content" name="content" required></textarea>
+            </div>
+                   
+
+            <div class="submit mt-3">
+              <input id="upload" type="submit" value="Upload">
+            </div>
+           </form>
+          </div>          
+        </div>
+          
+        <% } %>
+     
+
+<%- include("partials/footer.ejs") %>

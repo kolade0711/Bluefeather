@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<div id="singlePost">
+  <h3>Search Results for "<%=query %>" </h3>
+
+  <% if (matchedPosts.length === 0){ %>
+    <p>No posts found</p>
+  <%}else {%>
+    <ul>
+      <%matchedPosts.forEach(post => { %>
+        <li>
+          <a href="/posts/<%= post.id%>"><%= post.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+</div>
+
+  <div class="singlePostFooter">
+    <%- include("partials/footer.ejs") %>
+  </div>

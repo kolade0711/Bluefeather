@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluefeather Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/write.css">
+  
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-container row align-items-center py-2">
+      
+      <div class="top-left col-xl-3 col-lg-4 col-md-6 col-sm-12 pe-3 my-1">
+        <h1>Bluefeather</h1>
+        <img class="icon" src="../.././icon/Bluefeather.jpg">
+      </div>
+
+      <div class="top-middle col-xl-5 col-lg-4 col-md-4 col-sm-8 ps-3 my-1">
+           <form action="/search" method="GET">
+              <div class="search-button">
+                <button type="submit" >
+                  <img class="svg" src="../.././svgs/search.svg">
+                  </button>       
+                  <input type="text" name="q" placeholder="Search posts">
+              </div>
+            </form>             
+      </div>
+      
+      <div class="top-right col-xl-4 col-lg-4 col-md-2 col-sm-4 pb-1 my-1">
+        <div class="menu-icon" id="menu-icon"><img class="svg" src="../.././svgs/menu.svg" >
+         
+          <div class="nav-links" id="nav-links">
+            <a href="/">
+              Home
+            </a>
+        
+            <a href="/write">
+              Write
+            </a>
+        
+            <a href="/posts">
+              Posts
+            </a>        
+          </div>
+        </div>
+
+        <div class="nav-links2" id="nav-links2">
+          <a href="/">
+            <img class="svg" src="../.././svgs/home.svg">
+          </a>
+      
+          <a href="/write">
+            <img class="svg" src="../.././svgs/featherBiro.svg">
+          </a>
+      
+          <a href="/posts">
+            <img class="svg" src="../.././svgs/book.svg">
+          </a>  
+        </div>
+      
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+    
+       // Toggle menu on icon click
+        menuIcon.addEventListener('click', (e) => {
+          e.stopPropagation(); // stop click from bubbling up to document
+           navLinks.classList.toggle('show');
+        });
+
+        // Stop clicks *inside* nav from closing it
+        navLinks.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+
+        // Click *anywhere else* closes the menu
+          document.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+          });
+      });
+      
+    </script>
+      

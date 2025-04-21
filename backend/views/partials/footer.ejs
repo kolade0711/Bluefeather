@@ -1,0 +1,25 @@
+
+</div> 
+  <div class="footer-container">
+    <footer class="py-3 mt-3 footer">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href= "/write" class="nav-link px-2 text-body-secondary">Write</a></li>
+        <li class="nav-item"><a href="/posts" class="nav-link px-2 text-body-secondary">Journals</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">&copy; <span id="year"></span>  Bluefeather, Inc </p>
+    </footer>
+  </div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("year");
+      yearSpan.textContent = new Date().getFullYear();
+    });
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script> 
+</body>
+</html>

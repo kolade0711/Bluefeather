@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+
+<div id="postList" class="mt-2">
+  <h3>Published</h3>
+  <ul>
+  <% posts.forEach(post => { %>
+    <li>
+      <a href="/posts/<%= post.id%>"><%= post.title %></a>
+    </li>
+  <% }) %>
+  </ul>
+</div>
+
+<%- include("partials/footer.ejs") %>
